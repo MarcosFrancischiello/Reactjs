@@ -1,18 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import CartWidget from './CartWidget/CartWidget'
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
+    const [categorias, setCategorias] = useState([])
+
+
+    useEffect(() => {
+    fetch('https://fakestoreapi.com/products/categories')
+            .then(res=>res.json())
+            .then(json=>setCategorias(json))
+            .finally()
+    }, [])
 
     return (
-    <div className='navbar'>
-        <h1>Tienda de ropa</h1>
-        <ul><li>
-        <a href="">Home</a>
-        <a href="">Nosotros</a>
-        <a href="">Contacto</a>
-        </li></ul>
-        <CartWidget/>
-        </div>
+    <nav>
+        <Link to="/">
+        <h1>Mi tiendita!</h1>
+        </Link>
+        <ul>
+            {
+            categorias.length > 0 && categorias.map(e => <Link key={e} to={`/categoria/${e}`}>{e + " "}</Link>)
+            }    
+        </ul>
+        <CartWidget />
+    </nav>
+    
+    
     )
 }
 
