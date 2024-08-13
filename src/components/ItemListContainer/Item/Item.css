@@ -1,0 +1,37 @@
+.product-card{
+    padding: 20px;
+    background-color: thistle;
+    border-radius: 10px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    font-style: italic;
+}
+p{
+    font-size: large;
+    color: blueviolet;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+img{
+    box-sizing: border-box;
+    max-width: 200px;
+}
+.btn{
+    border-radius: 5px;
+    padding: 10px;
+    background-color: gray;
+    border: 5px black solid;
+    color: white;
+    text-align: center;
+}
+.btn:hover{
+    background-color: blueviolet;
+    font-style: italic;
+    border-radius: 2px;
+}

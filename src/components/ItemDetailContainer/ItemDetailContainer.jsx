@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import './ItemListContainer.css'
-import Item from './Item/Item'
-import { useParams } from "react-router-dom"
-const ItemListContainer = ({}) => {
+import ItemDetail from './ItemDetail/ItemDetail'
+import { useNavigate, useParams } from "react-router-dom"
+
+const ItemDetailContainer = ({}) => {
+    const { id } = useParams()
     const [productos, setProductos] = useState([])
     const {categoryName} = useParams()
 
     useEffect(() => {
         if(categoryName){
-            fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
+            fetch(`https://fakestoreapi.com/products/${id}`)
             .then(data => data.json())
             .then(json => setProductos(json))
         
@@ -24,11 +25,11 @@ const ItemListContainer = ({}) => {
         <div className="tienda">
         {productos.map((el) => {
             return (
-            <Item key={el.id} producto={el} />
+            <ItemDetail key={el.id} producto={el} />
             )
         })}
         </div>
 )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
