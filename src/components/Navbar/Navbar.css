@@ -9,6 +9,15 @@ h1{
 }
 a{
     text-decoration: none;
+    
+}
+.Nav-link{
+border: 2px solid blueviolet;
+padding: 20px;
+border-radius: 10px;
+}
+.Nav-link:hover{
+    background-color: lightpink;
 }
 a:hover{
     font-style: italic;
@@ -17,4 +26,5 @@ ul{
     display: flex;
     justify-content: space-around;
     font-size: x-large;
+
 }

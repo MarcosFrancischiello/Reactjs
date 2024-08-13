@@ -2,9 +2,11 @@
     padding: 20px;
     background-color: thistle;
     border-radius: 10px;
-    max-width: 200px;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
+    border: 2px solid black;
+    justify-content: space-around;
 }
 h3{
     font-style: italic;
@@ -21,6 +23,7 @@ p{
 img{
     box-sizing: border-box;
     max-width: 200px;
+    border: solid 2px blueviolet;
 }
 .btn{
     border-radius: 5px;

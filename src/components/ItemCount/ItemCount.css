@@ -1,3 +1,10 @@
-button{
-    padding: 20px;
+.btnItem{
+    padding: 10px;
+    border-radius: 5px;
+    background-color:blueviolet;
+    color: white;
+}
+.btnItem:hover{
+    background-color: lightpink;
+    color: black;
 }

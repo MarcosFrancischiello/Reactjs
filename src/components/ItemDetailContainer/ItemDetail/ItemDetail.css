@@ -1,0 +1,11 @@
+.buy-card{
+    padding: 20px;
+    background-color: thistle;
+    border-radius: 10px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    border: 2px solid black;
+}

@@ -1,10 +1,11 @@
 import React from 'react'
 import './CartWidget.css'
+import ItemCount from '../../ItemCount/ItemCount'
 const CartWidget = () => {
     return (
     <div className='CartWidget'>
         🛒
-        <span>0</span>
+        <span></span>
         </div>
 )
 }

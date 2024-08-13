@@ -2,33 +2,50 @@ import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail/ItemDetail'
 import { useNavigate, useParams } from "react-router-dom"
 
-const ItemDetailContainer = ({}) => {
+export const ItemDetailContainer = () => {
+    const [producto, setProducto] = useState({})
+    const [error, setError] = useState(null)
+    const [cargando, setCargando] = useState(true)
     const { id } = useParams()
-    const [productos, setProductos] = useState([])
-    const {categoryName} = useParams()
+    const navigate = useNavigate();
+
+    const mostrarSiguiente = () =>{
+        let ruta = id*1 + 1
+        navigate(`/detalle/${ruta}`)
+    }
+    const mostrarAnterior = () =>{
+        if(id > 0){
+            let ruta = id*1 - 1
+            navigate(`/detalle/${ruta}`)
+        }
+    }
+
 
     useEffect(() => {
-        if(categoryName){
-            fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(data => data.json())
-            .then(json => setProductos(json))
-        
-    }else{
-        fetch('https://fakestoreapi.com/products')
-            .then(data => data.json())
-            .then(res => setProductos(res))
-    }
-}, [categoryName]);
+        setCargando(true)
+        const fetchProducto = async () => {
+            try{
 
+            const res = await fetch(`https://fakestoreapi.com/products/${id}`)
+            const data = await res.json()
+            setProducto(data)
 
+            } catch (error){
+                setError(error)
+            } finally {
+                setCargando(false)
+            }
+        }
+
+        fetchProducto()
+
+    }, [ id])
     return (
-        <div className="tienda">
-        {productos.map((el) => {
-            return (
-            <ItemDetail key={el.id} producto={el} />
-            )
-        })}
-        </div>
+    <>
+    {
+
+        <ItemDetail producto={producto} mostrarSiguiente={mostrarSiguiente} mostrarAnterior={mostrarAnterior}/>
+    }</>
 )
 }
 

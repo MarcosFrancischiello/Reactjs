@@ -21,10 +21,9 @@ const Navbar = () => {
         </Link>
         <ul>
             {
-            categorias.length > 0 && categorias.map(e => <Link key={e} to={`/categoria/${e}`}>{e + " "}</Link>)
+            categorias.length > 0 && categorias.map(e => <Link  className='Nav-link'key={e} to={`/categoria/${e}`}>{e + " "}</Link>)
             }    
         </ul>
-        <CartWidget />
     </nav>
     
     
