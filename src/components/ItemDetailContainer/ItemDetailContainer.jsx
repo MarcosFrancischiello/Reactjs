@@ -4,8 +4,6 @@ import { useNavigate, useParams } from "react-router-dom"
 
 export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
-    const [error, setError] = useState(null)
-    const [cargando, setCargando] = useState(true)
     const { id } = useParams()
     const navigate = useNavigate();
 
@@ -20,26 +18,14 @@ export const ItemDetailContainer = () => {
         }
     }
 
-
     useEffect(() => {
-        setCargando(true)
         const fetchProducto = async () => {
-            try{
-
             const res = await fetch(`https://fakestoreapi.com/products/${id}`)
             const data = await res.json()
             setProducto(data)
-
-            } catch (error){
-                setError(error)
-            } finally {
-                setCargando(false)
-            }
         }
-
         fetchProducto()
-
-    }, [ id])
+    },[ id])
     return (
     <>
     {
