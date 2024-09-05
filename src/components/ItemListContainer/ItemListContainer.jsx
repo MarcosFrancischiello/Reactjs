@@ -31,7 +31,7 @@ const ItemListContainer = ({}) => {
             setProductos(prods)
         })
     }
-}, [categoryName]);
+}, [categoryName])
 
 
 

@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Error from './components/Error/Error'
 import Carrito from './components/Carrito/Carrito'
-import {CartContext} from './components/context/CartContext';
+import {CartContext} from './components/context/CartContext'
 import { CartContextProvider } from './components/context/CartContext'
 import Checkout from './components/Checkout/Checkout'
 import Order from './components/Order/Order'

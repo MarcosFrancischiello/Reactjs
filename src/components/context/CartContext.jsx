@@ -1,4 +1,4 @@
-import { Children, createContext, useState } from "react";
+import { Children, createContext, useState } from "react"
 
 export const CartContext = createContext()
 export const CartContextProvider = ( {children} ) =>{
@@ -6,7 +6,7 @@ export const CartContextProvider = ( {children} ) =>{
 
     const addCart = (producto) => {
         const { id, cantidad, price } = producto
-        const subtotal = cantidad * price;
+        const subtotal = cantidad * price
         const existingProduct = cart.find(item => item.id === id)
 
         if (existingProduct) {
@@ -30,7 +30,7 @@ export const CartContextProvider = ( {children} ) =>{
         return cart.reduce((acc, curr) => acc + curr.cantidad, 0)
     }
     const totalCarrito = () => {
-        return cart.reduce((acc, curr) => acc + curr.subtotal, 0);
+        return cart.reduce((acc, curr) => acc + curr.subtotal, 0)
     }
     return(
         <CartContext.Provider value={{cart, setCart, addCart, vaciarCarrito, eliminarProducto, cantidadItem, totalCarrito}}>

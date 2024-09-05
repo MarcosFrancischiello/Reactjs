@@ -8,7 +8,7 @@ import { getDoc, doc } from 'firebase/firestore'
 export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const { id } = useParams()
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchProducto = async () => {

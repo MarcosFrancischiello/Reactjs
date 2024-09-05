@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import CartWidget from './CartWidget/CartWidget'
-import { Link } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../services/firebaseConfig';
+import { Link } from 'react-router-dom'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../services/firebaseConfig'
 
 const Navbar = () => {
     const [categorias, setCategorias] = useState([])
@@ -11,19 +11,16 @@ const Navbar = () => {
 
     useEffect(() => {
         const obtenerCategorias = async () => {
-            const productosSnapshot = await getDocs(collection(db, 'productos')); // Ajusta 'productos' al nombre de tu colección
-            const productos = productosSnapshot.docs.map(doc => doc.data());
+            const productosSnapshot = await getDocs(collection(db, 'productos'))
+            const productos = productosSnapshot.docs.map(doc => doc.data())
+            const categoriasUnicas = [...new Set(productos.map(producto => producto.category))]
     
-            // Extrae categorías únicas de los productos
-            const categoriasUnicas = [...new Set(productos.map(producto => producto.category))];
-    
-            // Actualiza el estado con las categorías únicas
-            setCategorias(categoriasUnicas);
+            setCategorias(categoriasUnicas)
 
-        };
+        }
     
-        obtenerCategorias();
-    }, []);
+        obtenerCategorias()
+    }, [])
     
     return (
     <nav>

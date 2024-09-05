@@ -16,7 +16,7 @@ a{
 }
 .Nav-link{
 border: 2px solid blueviolet;
-padding: 20px;
+padding: 15px;
 border-radius: 10px;
 }
 .Nav-link:hover{
@@ -29,5 +29,11 @@ ul{
     display: flex;
     justify-content: space-around;
     font-size: x-large;
-
+    flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+    ul{
+font-size: large;
+padding: 10px;
+    }
 }

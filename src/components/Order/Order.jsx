@@ -14,7 +14,7 @@ const Order = () => {
         const docSnap = await getDoc(docRef)
     
         if (docSnap.exists()) {
-            setOrden(docSnap.data());
+            setOrden(docSnap.data())
         } else {
             console.error('Error al buscar la orden:', e)
         }
