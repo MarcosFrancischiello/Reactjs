@@ -22,7 +22,7 @@ return (
     )
 }
     </div>
-    <h3>Total del Carrito: ${totalCarrito().toFixed(2)}</h3>
+    <h3>Total del Carrito: ${totalCarrito()}</h3>
     {cart.length > 0 && <Link to="/checkout"><button>Terminar compra</button></Link>}
     </div>
 )

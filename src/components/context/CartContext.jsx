@@ -30,7 +30,8 @@ export const CartContextProvider = ( {children} ) =>{
         return cart.reduce((acc, curr) => acc + curr.cantidad, 0)
     }
     const totalCarrito = () => {
-        return cart.reduce((acc, curr) => acc + curr.subtotal, 0).toFixed(2)
+        const total = cart.reduce((acc, curr) => acc + parseFloat(curr.subtotal), 0)
+    return total.toFixed(2)
     }
     return(
         <CartContext.Provider value={{cart, setCart, addCart, vaciarCarrito, eliminarProducto, cantidadItem, totalCarrito}}>
