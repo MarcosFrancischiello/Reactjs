@@ -5,13 +5,13 @@ const Item = ( props ) =>{
 
     const {producto} = props
 
-    const {id, image, title, price, description} = producto
+    const {id, image, title, price} = producto
     return (
     <div className='product-card'>
         <h3>{title}</h3>
         <img src={image} alt={ 'foto del produtcto ${title}'}/>
         <p>{price}</p>
-        <Link to={`/detalle/${id}`} className='btn'>Comprar</Link>
+        <Link to={`/detalle/${id}`} className='btn'>Ver detalle</Link>
     </div>
 )
 }

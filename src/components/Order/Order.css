@@ -1,0 +1,44 @@
+.Orderform{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-style: italic;
+    width: 300px;
+}
+.Order{
+padding-top: 20px;
+background-color: lightgray;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.Order button{
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: lightcyan;
+    font-size: large;
+    color: darkblue;
+}
+.Order button:hover{
+    background-color: darkcyan;
+    color: lightblue;
+
+}
+
+.OrderContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.OrderProduct{
+    display: flex;
+    flex-direction: column;
+gap: 10px;
+}
+.Order h2,h4{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+border: 2px solid gray;
+}

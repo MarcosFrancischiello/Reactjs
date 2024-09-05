@@ -1,0 +1,7 @@
+.OrderItem{
+    display: flex;
+    flex-direction: column;
+}
+.OrderItem img{
+    max-width: 100px;
+}

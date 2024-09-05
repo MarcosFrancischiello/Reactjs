@@ -7,6 +7,7 @@
     flex-direction: column;
     border: 2px solid black;
     justify-content: space-around;
+    gap: 5px;
 }
 h3{
     font-style: italic;
@@ -19,11 +20,14 @@ p{
     padding: 10px;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 img{
     box-sizing: border-box;
     max-width: 200px;
     border: solid 2px blueviolet;
+    border-radius: 10px;
+    align-self: center;
 }
 .btn{
     border-radius: 5px;

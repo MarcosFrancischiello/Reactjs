@@ -1,0 +1,32 @@
+.formCheckout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.formCheckout h2{
+    color: blueviolet;
+    text-align: center;
+}
+.formCheckout form{
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+}
+.formCheckout form label{
+    font-style: italic;
+    font-size: large;
+}
+.formCheckout input{
+    border-radius: 5px;
+    border: 2px solid blueviolet;
+}
+.formCheckout button{
+    background-color: lightsteelblue;
+    border: none;
+    border-radius: 10px;
+}
+.formCheckout button:hover{
+    background-color: lightgreen;
+    border: 1px solid black;
+}

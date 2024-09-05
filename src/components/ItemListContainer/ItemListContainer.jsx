@@ -2,22 +2,37 @@ import React, { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import Item from './Item/Item'
 import { useParams } from "react-router-dom"
+import { db } from '../../services/firebaseConfig'
+import { collection, getDocs, query, where, addDoc} from 'firebase/firestore'
+
+
+
 const ItemListContainer = ({}) => {
     const [productos, setProductos] = useState([])
     const {categoryName} = useParams()
 
     useEffect(() => {
         if(categoryName){
-            fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
-            .then(data => data.json())
-            .then(json => setProductos(json))
-        
+            const categoryProducts= query(collection(db, "productos"), where("category", "==", categoryName))
+            getDocs(categoryProducts).then(snapshot=>{
+                const prods = snapshot.docs.map(doc=>{
+                const data = doc.data()
+                    return {...data, id:doc.id}
+                })
+                setProductos(prods)
+            })
     }else{
-        fetch('https://fakestoreapi.com/products')
-            .then(data => data.json())
-            .then(res => setProductos(res))
+        const productsRef = collection(db, "productos")
+        getDocs(productsRef).then(snapshot=>{
+            const prods = snapshot.docs.map(doc=>{
+            const data = doc.data()
+                return {...data, id:doc.id}
+            })
+            setProductos(prods)
+        })
     }
 }, [categoryName]);
+
 
 
     return (

@@ -1,0 +1,22 @@
+.Error404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+.Error404 h4{
+color: blueviolet;
+font-size: x-large;
+}
+.Error404 button{
+    background-color: blueviolet;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    border: 4px solid black;
+}
+.Error404 button:hover{
+    background-color: pink;
+    color: black;
+}
